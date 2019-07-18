@@ -4,8 +4,8 @@ import re
 import shutil
 
 
-src_directory = "/Users/shunrongshen/Downloads/output_vn"
-tgt_directory = "data/orig-vn"
+src_directory = "/data/face_recognition/face_cn"
+tgt_directory = "data/orig-images"
 
 
 # Load files

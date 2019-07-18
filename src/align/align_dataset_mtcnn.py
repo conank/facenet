@@ -25,8 +25,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from scipy import misc
 import sys
+from os.path import dirname
+sys.path.append(dirname("/data/face_recognition/facenet"))
+sys.path.append(dirname("/data/face_recognition/facenet/src/align"))
+
+from scipy import misc
 import os
 import argparse
 import tensorflow as tf
