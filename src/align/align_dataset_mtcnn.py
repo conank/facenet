@@ -27,7 +27,7 @@ from __future__ import print_function
 
 import sys
 from os.path import dirname
-sys.path.append(dirname("/data/face_recognition/facenet"))
+sys.path.append(dirname("/data/face_recognition/facenet/src"))
 sys.path.append(dirname("/data/face_recognition/facenet/src/align"))
 
 from scipy import misc
