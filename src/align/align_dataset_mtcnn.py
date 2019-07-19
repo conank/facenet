@@ -29,7 +29,7 @@ import sys
 from os.path import dirname
 sys.path.append(dirname("/data/face_recognition/facenet/src"))
 sys.path.append(dirname("/data/face_recognition/facenet/src/align"))
-
+import shutil
 from scipy import misc
 import os
 import argparse
@@ -140,7 +140,12 @@ def main(args):
                             
     print('Total number of images: %d' % nrof_images_total)
     print('Number of successfully aligned images: %d' % nrof_successfully_aligned)
-            
+    print("Removing single file folder")
+    result_folders = [folder for folder in os.listdir(output_dir) if os.path.isdir(os.path.join(output_dir, folder))]
+    for folder in result_folders:
+        num_files = len(os.listdir(os.path.join(output_dir, folder)))
+        if num_files < 2:
+            shutil.rmtree(os.path.join(output_dir, folder)) 
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
